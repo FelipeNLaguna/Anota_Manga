@@ -27,11 +27,25 @@ using namespace std;
 
 
 */
-int cria_arquivo (){
-    
-    return 0;
-}
 
+// Função responsável por testar se o arquivo existe
+bool Existe_arquivo(string nome_arq){
+    // declara um arquivo do tipo ifstream que recebe como nome o nome do arquivo
+    ifstream arquivo(nome_arq);
+    // variável que vai ser retornada
+    bool tem_arq;  
+    if(arquivo.is_open()){
+        arquivo.close(); // Fecha o arquivo
+        tem_arq = true;
+    }
+    else{
+        tem_arq = false;
+    }
+    return tem_arq;
+}
+bool Cria_arquivo(){
+
+}
 int main (){
     // 'Tela' inicial
     cout << "Bem vindo ao Organizador de mangás e animes!" << endl;
@@ -48,7 +62,7 @@ int main (){
     cout << "Digite o nome do arquivo que deseja criar/ler" << endl;
     cin >> nome_arquivo;
     // classe ifsteam
-    ifstream arquivo(nome_arquivo);
+    // ifstream arquivo(nome_arquivo);
     // is_open : função do ifstream , retorna True se existe e False se não existe
     // Lembrar de fechar arquivo - close()
 
@@ -59,7 +73,7 @@ int main (){
     if(resposta){
         
     }
-    cria_arquivo() ;
+    //cria_arquivo() ;
 
     return 0;
 }
