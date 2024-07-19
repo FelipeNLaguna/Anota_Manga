@@ -43,8 +43,17 @@ bool Existe_arquivo(string nome_arq){
     }
     return tem_arq;
 }
-bool Cria_arquivo(){
-
+bool Cria_arquivo(string nome_arq){
+    bool criou_arq = true;
+    // classe ofstream pode criar/escrever arquivo , permite manipulação de arq bin/txt   
+    ofstream arquivo(nome_arq);
+    if(!arquivo){
+        criou_arq = false; 
+    }
+    // fecha arquivo
+    arquivo.close();
+    // retorna se o arquivo foi criado com sucesso
+    return criou_arq;
 }
 int main (){
     // 'Tela' inicial
@@ -65,15 +74,27 @@ int main (){
     // ifstream arquivo(nome_arquivo);
     // is_open : função do ifstream , retorna True se existe e False se não existe
     // Lembrar de fechar arquivo - close()
-
-
-    
-     
     // do/while até o usuário querer parar o programa
-    if(resposta){
-        
+    
+    // variável p/ testar se existe o arquivo
+    bool exist_arq;
+    // testa se quer criar ou ler
+    if(!resposta){
+        // se quer criar , cria arquivo
+        Cria_arquivo(nome_arquivo);
     }
-    //cria_arquivo() ;
+    else{
+        // senão , testa se o arquivo existe
+        exist_arq = Existe_arquivo(nome_arquivo);
+        // se o arquivo não existe entra no if e cria o arquivo
+        if(!exist_arq){
+            Cria_arquivo(nome_arquivo);
+        }
+    }
+
+    // Abrir arquivo e escrever e percorre-lo
+
+
 
     return 0;
 }
