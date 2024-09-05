@@ -152,9 +152,13 @@ int main (){
                 // Variaveis para o manga
                 Manga manga;
                 string nome_manga;
-                int capitulo;
+                // pode parar em um filer , como cap 140.5 de tonikaku kawaii
+                float capitulo;
                 cout << "Digite o nome do Manga" << endl;
-                cin >> nome_manga;
+                //limpa o buffer que possui um /n do ultimo cin
+                cin.ignore();
+                // usado para pegar uma string com espaço
+                getline(cin, nome_manga);
                 cout << "Digite o capitulo que tu parou" << endl;
                 cin >> capitulo;
                 manga.name = nome_manga;
@@ -169,9 +173,13 @@ int main (){
                 Anime anime;
                 string nome_anime;
                 int temporada;
-                int episodio;
+                // pode parar em um episodio filer como o ep 6.5 de remake our life
+                float episodio;
                 cout << "Digite o nome do Anime " << endl;
-                cin >> nome_anime;
+                //limpa o buffer que possui um /n do ultimo cin
+                cin.ignore();
+                // usado p/ pegar uma string com espaço
+                getline(cin , nome_anime);
                 cout << "Digite em qual temporada tu parou" << endl;
                 cin >> temporada;
                 cout << "Digite em qual episodio tu parou " << endl;
@@ -201,14 +209,6 @@ int main (){
 }
 
 // OJETIVOS :
-// Terminar a classe;
-// Testar se escreve no arquivo
-// Salvar no git
 // Percorrer o arquivo para atualizações
 // Testar e salvar
-// Looping de escrever
-// Testar e salvar
-// Anime temporada
-// Dá erro quando é usado espaço
-
 // Dá para só usar touper para testar?
