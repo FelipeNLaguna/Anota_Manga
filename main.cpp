@@ -76,6 +76,11 @@ class Manga{
                     arquivo << "(M) " << name << " - " << "ch" << chapter << endl;
                 }
             }
+            // limpa o vetor
+            linhas.clear();
+            // libera a memória alocada
+            linhas.shrink_to_fit();
+            
             arquivo.close();
         }
 };
@@ -127,6 +132,11 @@ class Anime{
                     arquivo << "(A) " << name << " - " <<"tp" << Temp  << " ep" << episode << endl;
                 }
             }
+            // limpa o vetor
+            linhas.clear();
+            // libera a memória alocada
+            linhas.shrink_to_fit();
+            
             arquivo.close();
         }
 };
